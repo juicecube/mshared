@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "@mlz/lint/tslint.json"
+  ],
+  "rules": {
+    "no-unused-expression": false,
+    "no-console": false,
+    "no-default-export": false
+  }
+}

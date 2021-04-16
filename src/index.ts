@@ -1,0 +1,1 @@
+export { Shared } from './shared';
