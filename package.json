@@ -10,10 +10,7 @@
     "api": "api-extractor run",
     "test": "jest --coverage --verbose -u",
     "lint": "eslint --ext .js,.ts --format=pretty ./src",
-    "lint:fix": "eslint --fix --ext .js,.ts --format=pretty ./src",
-    "changelog": "gulp changelog",
-    "version": "yarn changelog && git add CHANGELOG.md",
-    "release": "yarn test && yarn build && np --no-cleanup --yolo --any-branch"
+    "lint:fix": "eslint --fix --ext .js,.ts --format=pretty ./src"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.12.16",
