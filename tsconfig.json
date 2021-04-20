@@ -1,6 +1,6 @@
   {
     "compilerOptions": {
-      /* 基础配置 */
+      "jsx": "react",
       "target": "ES5",
       "lib": [
         "DOM",
@@ -9,12 +9,8 @@
       "removeComments": false,
       "declaration": true,
       "sourceMap": true,
-  
-      /* 强类型检查配置 */
       "strict": true,
       "noImplicitAny": false,
-  
-      /* 模块分析配置 */
       "baseUrl": ".",
       "outDir": "./lib",
       "esModuleInterop": true,

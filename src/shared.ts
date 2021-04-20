@@ -1,3 +1,4 @@
+import _ from 'lodash';
 export type Store = Record<string, any>
 
 export type Listner = (state:Record<string, any>, prevState:Record<string, any>) => void;
@@ -20,6 +21,8 @@ export class Shared<T extends string> {
     private storeName:T
 
     private shareType:ShareType;
+
+    private registerChild:Array<T>=[]
 
     constructor(opt:SharedOpts<T>){
       const { type, storeName, initStore } = opt;
@@ -66,19 +69,30 @@ export class Shared<T extends string> {
           ...this.store,
           [storeName]: store,
         };
-        for(const key in this.listners){
-          this.listners[key].forEach((callback:Listner) => {
-            callback(this.store, prevState);
-          });
+        if(!_.isEqual(this.store, prevState)){
+          for(const key in this.listners){
+            this.listners[key].forEach((callback:Listner) => {
+              callback(this.store, prevState);
+            });
+          }
         }
       }
     }
 
     setGlobalShare(shared:Shared<T>){
       if(this.shareType !== 'child' || shared.shareType !== 'global'){
-        throw new Error('you should setGlobalShare when this.shareType is child and shared.shareType is global!');
+        throw new Error('setGlobalShare 必须满足当前的shareType是child和传入的shared的shareType是global');
       }
-      this.globalShared = shared;
-      this.globalShared.store[this.storeName] = this.store[this.storeName];
+      if(!this.globalShared){
+        this.globalShared = shared;
+        /**
+         * 当global share未注册当前shared和globalStore没有当前store,才会进行store初始化
+         */
+        if(!shared.registerChild.includes(this.storeName) && !(this.storeName in shared.store)){
+          shared.store[this.storeName] = this.store[this.storeName];
+          shared.registerChild.push(this.storeName);
+        }
+      }
     }
 }
+

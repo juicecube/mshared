@@ -2,11 +2,13 @@ module.exports = {
     'extends': [
         './node_modules/@mlz/lint/ts-eslintrc-react.js',
     ],
-    parserOptions: {
-        project: './tsconfig.eslint.json',
-    },
     plugins: [
         'jest',
     ],
+    'rules': {
+        'react/prop-types': 0,
+        "react/no-multi-comp":0,
+        "@typescript-eslint/no-empty-function":0
+      },
 };
   

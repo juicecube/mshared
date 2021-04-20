@@ -6,6 +6,7 @@
           "modules": false
         }
       ]
-    ]
+    ],
+    "plugins": [["lodash"],["@babel/transform-react-jsx"]]
   }
   

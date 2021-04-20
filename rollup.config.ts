@@ -5,7 +5,6 @@ import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import { DEFAULT_EXTENSIONS } from '@babel/core';
-
 import pkg from './package.json';
 
 const paths = {
@@ -16,6 +15,7 @@ const paths = {
 // rollup 配置项
 const rollupConfig:RollupOptions = {
   input: paths.input,
+  external: Object.keys(pkg.peerDependencies || {}).concat('react-dom'),
   output: [
     // 输出 commonjs 规范的代码
     {
