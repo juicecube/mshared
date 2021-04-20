@@ -27,7 +27,7 @@ yarn run start
 
 Visit `http://localhost:7099`.
 
-![image-20210401134231848](./dist/demo.gif)
+![image-20210401134231848](./doc/demo.gif)
 
 ### Api
 
