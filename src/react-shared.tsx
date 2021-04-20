@@ -47,7 +47,7 @@ export const ShareProvider:React.FC<ShareProvideProps> = ({ children, shared }) 
 
 export const useShared = () => useContext(Context);
 
-export const withShared = (Com: React.FC<ShareContext>|typeof React.PureComponent & React.Component) => {
+export const withShared = (Com:React.FC<ShareContext>|typeof React.PureComponent & React.Component) => {
   const Component = () => {
     const { store, setStore } = useShared();
     return (
@@ -56,5 +56,5 @@ export const withShared = (Com: React.FC<ShareContext>|typeof React.PureComponen
         setStore={setStore} />
     );
   };
-  return Component
+  return Component;
 };
