@@ -1,6 +1,6 @@
 {
   "name": "mshared",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "微前端通信方案；适用于（乾坤）",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
