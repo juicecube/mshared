@@ -1,3 +1,3 @@
-import { Shared } from 'shared';
+import { Shared } from 'mshared';
 
-export default new Shared({ storeName: 'app1', initStore: { count: 0 } });
+export const shared = new Shared({ storeName: 'app1', initStore: { count: 0 } });

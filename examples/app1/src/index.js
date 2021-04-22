@@ -1,17 +1,17 @@
 import './public-path';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ShareProvider } from 'shared';
-import App from './App';
+import { ShareProvider } from 'mshared';
+import { App } from './App';
 import * as serviceWorker from './serviceWorker';
-import share from './shared';
+import { shared } from './shared';
 function render(props) {
   const { container } = props;
   if(props.shared){
-      share.setGlobalShare(props.shared)
+    shared.setGlobalShare(props.shared);
   }
   ReactDOM.render(
-    <ShareProvider shared={share}>
+    <ShareProvider shared={shared}>
       <App />
     </ShareProvider>
     , container ? container.querySelector('#root') : document.querySelector('#root'));
