@@ -6,7 +6,7 @@
   "module": "lib/index.esm.js",
   "typings": "lib/index.d.ts",
   "scripts": {
-    "install": "lerna bootstrap",
+    "example:install": "lerna bootstrap",
     "start": "lerna run start",
     "build": "gulp build",
     "api": "api-extractor run",
