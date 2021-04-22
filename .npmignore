@@ -1,0 +1,8 @@
+test/
+ts/
+node_modules
+.npmrc
+.github
+.eslintrc
+jest.config.js
+*.md
