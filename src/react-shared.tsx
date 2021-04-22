@@ -33,13 +33,14 @@ export const ShareProvider:React.FC<ShareProvideProps> = ({ children, shared }) 
     shared.setStore(key, value);
   }, []);
 
+  const ctx = React.useMemo(() => ({
+    store,
+    setStore,
+  }), [store, setStore]);
+
   return (
     <Context.Provider
-      value={{
-        store,
-        setStore,
-      }}
-    >
+      value={ctx}>
       {children}
     </Context.Provider>
   );

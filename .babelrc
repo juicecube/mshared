@@ -7,6 +7,6 @@
         }
       ]
     ],
-    "plugins": [["lodash"],["@babel/transform-react-jsx"]]
+    "plugins": [["@babel/transform-react-jsx"]]
   }
   
