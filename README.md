@@ -1,29 +1,29 @@
-# shared
+# mshared
 
-> 1. shared 是一个前端状态共享的库。
-> 2. shared 提供了一套 react 状态管理 Api。
-> 3. shared 通过设置 globalShare，实现微前端应用之前的通信（一主多从）。
+> 1. mshared 是一个前端状态共享的库。
+> 2. mshared 提供了一套 react 状态管理 Api。
+> 3. mshared 通过设置 globalShare，实现微前端应用之前的通信（一主多从）。
 
 ### Installation
 
 ```shell
-yarn add shared #or npm i shared -S
+yarn add mshared #or npm i mshared -S
 ```
 
 ### Example For Qiankun
 
-1. 首先 clone `shared`：
+1. 首先 clone `mshared`：
 
 ```shell
-git clone git@github.com:juicecube/shared.git
-cd shared
+git clone git@github.com:juicecube/mshared.git
+cd mshared
 ```
 
 2. 执行 scripts 和 启动 examples project：
 
 ```shell
 yarn install
-yarn run install
+yarn run example:install
 yarn run start
 ```
 
@@ -36,7 +36,7 @@ Visit `http://localhost:7099`.
 #### 1. Shared
 
 ```js
-import { Shared } from 'shared'
+import { Shared } from 'mshared'
 
 type StoreList = 'main' | 'demo' | 'partner'
 
@@ -116,7 +116,7 @@ shared.subscribe((state, prevState) => {
 #### 7. ShareProvider `React Api`
 
 ```jsx
-import { Shared } from 'shared'
+import { Shared } from 'mshared'
 
 type StoreList = 'main' | 'demo' | 'partner'
 
@@ -145,7 +145,7 @@ export async function mount(props: any) {
 
 ```js
 import React from 'react'
-import { useShared } from 'shared'
+import { useShared } from 'mshared'
 
 export const Page = () => {
   const { store, setStore } = useShared()
@@ -167,7 +167,7 @@ export const Page = () => {
 
 ```js
 import React from 'react'
-import { withShared } from 'shared'
+import { withShared } from 'mshared'
 
 const Page = (props) => {
   const { demo } = props.store
