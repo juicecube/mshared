@@ -1,5 +1,5 @@
 {
-  "name": "shared",
+  "name": "@shared",
   "version": "0.0.1",
   "description": "微前端通信方案；适用于（乾坤）",
   "main": "lib/index.js",
