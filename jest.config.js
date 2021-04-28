@@ -1,8 +1,12 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  projects: [
-    '<rootDir>/test/*',
-  ],
+  transform: {
+    ".(ts|tsx)": "ts-jest"
+  },
+  coverageDirectory: 'coverage',
+//   projects: [
+//     '<rootDir>/test/*',
+//   ],
 };
 

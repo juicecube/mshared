@@ -14,7 +14,6 @@ const Context = createContext<ShareContext>({
 interface ShareProvideProps{
     shared:Shared<any>;
 }
-
 export const ShareProvider:React.FC<ShareProvideProps> = ({ children, shared }) => {
 
   const [store, setState] = React.useState(shared.getStore());

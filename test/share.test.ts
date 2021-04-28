@@ -1,5 +1,4 @@
 import { Shared } from '../src';
-
 type SharedList = 'child' | 'main'
 
 const mainShared = new Shared<SharedList>({
@@ -16,7 +15,6 @@ const childSharedd = new Shared<SharedList>({
     count: 1,
   },
 });
-
 
 test('share', () => {
   childSharedd.setGlobalShare(mainShared);

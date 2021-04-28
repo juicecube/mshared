@@ -1,4 +1,5 @@
 import { equalsObj } from './utils';
+
 export type Store = Record<string, any>
 
 export type Listner = (state:Record<string, any>, prevState:Record<string, any>) => void;
@@ -10,7 +11,6 @@ export interface SharedOpts<T>{
     initStore?:Store;
     type?:ShareType;
 }
-
 
 export class Shared<T extends string> {
     private store:Store = {}
