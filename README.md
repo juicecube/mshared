@@ -1,6 +1,6 @@
 # mshared
 
-> 1. mshared 是一个前端状态共享的库。
+> 1. mshared 是一个轻量的状态共享的库 （2.54kb）。
 > 2. mshared 提供了一套 react 状态管理 Api。
 > 3. mshared 通过设置 globalShare，实现微前端应用之前的通信（一主多从）。
 
